@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Narrative Visualization Project</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body onload="scene2_load()">
+    <p style="font-weight: 400;">CS416: Data Visualization - Narrative Visualization Project (shuxu3@illinois.edu)</p>
+    <h1> The Impact of Cylinder Number on Fuel Efficiency</h1>
+    <div id="tooltip" style="opacity:0"></div>
+
+    <div class="center">
+        <div class="pagination">
+        <a href="./scene2.html">&laquo;</a>
+        <a href="./scene1.html">1</a>
+        <a href="./scene2.html" class="active">2</a>
+        <a href="./scene3.html" >3</a>
+        <a href="./scene3.html">&raquo;</a>
+        </div>
+      </div>
+
+      <br>
+      <p>
+          The folllowing two figures are semi-log plots of average city MPGs /average highway MPGs vs. number of cylinders.
+      </p>
+      <svg id="scene2_1" width=1000 height=425></svg>
+      <svg id="scene2_2" width=1000 height=425></svg> 
+      
+    </body>
+  
+    <script src="https://d3js.org/d3.v7.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+  
+    <script src="./viz2.js"></script>      
+
+</html>
