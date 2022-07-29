@@ -52,11 +52,6 @@ var bar_tooltip = d3.select("body")
     .style("opacity", 0)
     .attr("class", "tooltip")
 
-var mouseout = (d, _) => {
-        bar_tooltip
-          .transition()
-          .style("opacity", 1)
-    }
 
 async function scene3_load() {
     var scene31 = d3.select('#scene31')
@@ -112,7 +107,7 @@ async function scene3_load() {
                 .on("mouseover", function(index, data) {        
                     d3.select(this).transition()
                         .duration(50)
-                    //    .attr('opacity', 0.9);
+                        .attr('opacity', 0.5);
                     
                         bar_tooltip.transition()
                             .duration(200)
@@ -125,7 +120,16 @@ async function scene3_load() {
                             .style("left", (event.pageX+15) + "px")
                             .style("top", (event.pageY+15) + "px");
                         })               
-                .on("mouseout", mouseout);
+                .on("mouseout", function(d) {
+        
+                    d3.select(this).transition()
+                                    .duration('50')
+                                    .attr('opacity', '1');
+                    
+                                tooltip.transition()
+                                    .duration(200)
+                                    .style("opacity", 0);
+                                });      
             
             scene31.append("text")
                 .attr("x", 500)
@@ -178,7 +182,7 @@ async function scene3_load() {
                 .on("mouseover", function(index, data) {        
                     d3.select(this).transition()
                         .duration(50)
-                    //    .attr('opacity', '.9');
+                        .attr('opacity', '.5');
                     
                         bar_tooltip.transition()
                             .duration(200)
@@ -191,7 +195,16 @@ async function scene3_load() {
                             .style("left", (event.pageX+15) + "px")
                             .style("top", (event.pageY+15) + "px");
                         })               
-                .on("mouseout", mouseout);            
+                .on("mouseout", function(d) {
+        
+                        d3.select(this).transition()
+                                .duration('50')
+                                .attr('opacity', '1');
+                
+                            tooltip.transition()
+                                .duration(200)
+                                .style("opacity", 0);
+                            });         
 
             
             scene32.append("text")

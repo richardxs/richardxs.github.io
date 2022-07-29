@@ -16,12 +16,6 @@ async function scene2_load() {
     
     const data = await d3.csv("https://flunky.github.io/cars2017.csv")
 
-    var mouseleave = (d, _) => {
-        tooltip
-          .transition()
-          .style("opacity", 0)
-    }
-
    // Average City MPG    
    var scene21 = d3.select('#scene2_1')
 
@@ -64,8 +58,8 @@ async function scene2_load() {
         .attr('class', (d, _) => d.Fuel.toLowerCase())
         // 50 is add the left margin
         .attr('cx', (d, _) => x(d.EngineCylinders) + 70)
-        .attr('cy', (d, _) => y(d.AverageCityMPG) + 40 )
-        .attr('r', (d, _) => parseInt(d.EngineCylinders) + 3)
+        .attr('cy', (d, _) => y(d.AverageCityMPG) + 35 )
+        .attr('r', (d, _) => parseInt(d.EngineCylinders) + 5)
         .style('fill', function(d,i) { return fuel_scale(d.Fuel);})        
         .on("mouseover", function(index, data) {
         
@@ -86,15 +80,24 @@ async function scene2_load() {
                     .style("left", (event.pageX+15) + "px")
                     .style("top", (event.pageY+15) + "px");
                 })
-        .on("mouseout", mouseleave);
+            .on("mouseout", function(d) {
+        
+                    d3.select(this).transition()
+                        .duration('50')
+                        .attr('opacity', '1');
+        
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", 0);
+                    });
  
   // Legend
-  scene21.append("circle").attr("cx", 900).attr("cy", 100).attr("r", 5).style("fill", "red")
-  scene21.append("circle").attr("cx", 900).attr("cy", 120).attr("r", 5).style("fill", "green")
-  scene21.append("circle").attr("cx", 900).attr("cy", 140).attr("r", 5).style("fill", "blue")
-  scene21.append("text").attr("x", 920).attr("y", 100).text("Gasoline").style("font-size", "15px").attr("alignment-baseline", "middle")
-  scene21.append("text").attr("x", 920).attr("y", 120).text("Electricity").style("font-size", "15px").attr("alignment-baseline", "middle")
-  scene21.append("text").attr("x", 920).attr("y", 140).text("Diesel").style("font-size", "15px").attr("alignment-baseline", "middle")   
+  scene21.append("circle").attr("cx", 800).attr("cy", 100).attr("r", 5).style("fill", "red")
+  scene21.append("circle").attr("cx", 800).attr("cy", 120).attr("r", 5).style("fill", "green")
+  scene21.append("circle").attr("cx", 800).attr("cy", 140).attr("r", 5).style("fill", "blue")
+  scene21.append("text").attr("x", 820).attr("y", 100).text("Gasoline").style("font-size", "15px").attr("alignment-baseline", "middle")
+  scene21.append("text").attr("x", 820).attr("y", 120).text("Electric").style("font-size", "15px").attr("alignment-baseline", "middle")
+  scene21.append("text").attr("x", 820).attr("y", 140).text("Diesel").style("font-size", "15px").attr("alignment-baseline", "middle")   
 
   scene21.append("text")
   .attr("x", 500)
@@ -147,7 +150,7 @@ async function scene2_load() {
       // 50 is add the left margin
       .attr('cx', (d, _) => x(d.EngineCylinders) + 70)
       .attr('cy', (d, _) => y(d.AverageHighwayMPG) + 50 )
-      .attr('r', (d, _) => parseInt(d.EngineCylinders) + 3)
+      .attr('r', (d, _) => parseInt(d.EngineCylinders) + 5)
       .style('fill', function(d,i) { return fuel_scale(d.Fuel);})        
       .on("mouseover", function(index, data) {
       
@@ -168,15 +171,24 @@ async function scene2_load() {
                   .style("left", (event.pageX+15) + "px")
                   .style("top", (event.pageY+15) + "px");
               })
-      .on("mouseout", mouseleave);
+        .on("mouseout", function(d) {
+        
+            d3.select(this).transition()
+                    .duration('50')
+                    .attr('opacity', '1');
+    
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", 0);
+                });
 
 // Legend
-scene22.append("circle").attr("cx", 900).attr("cy", 100).attr("r", 5).style("fill", "red")
-scene22.append("circle").attr("cx", 900).attr("cy", 120).attr("r", 5).style("fill", "green")
-scene22.append("circle").attr("cx", 900).attr("cy", 140).attr("r", 5).style("fill", "blue")
-scene22.append("text").attr("x", 920).attr("y", 100).text("Gasoline").style("font-size", "15px").attr("alignment-baseline", "middle")
-scene22.append("text").attr("x", 920).attr("y", 120).text("Electricity").style("font-size", "15px").attr("alignment-baseline", "middle")
-scene22.append("text").attr("x", 920).attr("y", 140).text("Diesel").style("font-size", "15px").attr("alignment-baseline", "middle")   
+scene22.append("circle").attr("cx", 800).attr("cy", 100).attr("r", 5).style("fill", "red")
+scene22.append("circle").attr("cx", 800).attr("cy", 120).attr("r", 5).style("fill", "green")
+scene22.append("circle").attr("cx", 800).attr("cy", 140).attr("r", 5).style("fill", "blue")
+scene22.append("text").attr("x", 820).attr("y", 100).text("Gasoline").style("font-size", "15px").attr("alignment-baseline", "middle")
+scene22.append("text").attr("x", 820).attr("y", 120).text("Electric").style("font-size", "15px").attr("alignment-baseline", "middle")
+scene22.append("text").attr("x", 820).attr("y", 140).text("Diesel").style("font-size", "15px").attr("alignment-baseline", "middle")   
 
 scene22.append("text")
 .attr("x", 500)

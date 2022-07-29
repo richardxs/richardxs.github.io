@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{CS416 Data Visualization}
+\rhead{Narrative Visualization Project Essay}
+\rfoot{Page \thepage}
+
+% Title Page
+\title {Study on Fuel Efficiency of Automobiles }
+\author{ Shu Xu \\ \href{mailto:shuxu3@illinois.edu}{shuxu3@illinois.edu} \\ University of Illinois at Urbana-Champaign}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+My narrative visualization seeks to study fuel efficiency and its contributing factors via different automobile makes to provide guidance on the choice of cars. To start viewing the interactive slideshow, the viewers can click on "1" or the "right arrow" on the navigation bar. During the browsing process, they can use "left arrow" or "right arrow" to move to the previous or the next scene, or simply click numeric buttons "1", "2", or "3" to go directly to one of the three scenes. 
+
+\begin{itemize}
+	\item Users can access the narrative visualization at: \url{https://richardxs.github.io/index.html} \\
+	\item My codebase is located at: \url{https://github.com/richardxs/richardxs.github.io/tree/FuelEfficiency} \\
+	\item Data source (public)  at: \url{https://flunky.github.io/cars2017.csv}
+\end{itemize}
+
+
+\section{Messaging}
+With gas price through the roof nowadays, people have been changing travel behaviors and have shown an increasing interest in cars with a higher fuel efficiency. Fuel efficiency is defined as a measure of how much a car will convert energy in fuel into kinetic energy to travel. In other words, fuel efficiency shows how far your car can travel with a certain amount of fuel. In United States, fuel efficiency is evaluated by "miles per gallon" (MPG). Vehicles with better fuel efficiency tend to have a higher MPG value. Choosing a fuel efficient vehicle can bring a wide range of advantages: saving fuel costs, reducing carbon footprint, cutting our dependence on oil, etc. 
+
+The fuel efficiency of automobiles can be impacted by several factors, including the engine type, number of cylinders and brands. Through my narrative visualization, the messages I am trying to communicate are that
+\begin{enumerate}
+	\item Electric cars have much higher average city/highway MPGs, followed by diesel and gasoline engines.
+	\item Average city/highway MPGs decrease with a rising number of cylinders
+	\item Although electric cars outperform their fossil fuel counterparts in fuel efficiency,  customers still need to consider other factors including size, easy access to gas stations and financial reasons. Nowadays most car makers manufacture 4-cylinder gasoline cars because they are cheap, spacious and there is no shortage of gas stations. Among them top choices include Kia, Lexus, Chevolet, Honda, Mazda, Toyota and Hyundai. 
+\end{enumerate}
+
+\section{Narrative Structure}
+The narrative visualization is designed to follow the interactive slide show structure. Such a structure follows an author-directed path through a slideshow. Users can navigate a slideshow using a navigation bar or “slide backward/advance” on the top left portion of the visualization. User exploration is allowed during the process.
+
+My narrative visualization enables moving from slide to slide, with options to investigate further in-between. My slides start off with an index page that provides an introduction to the concept of fuel efficiency,  why it is so important, and how to get started. Users can use the right arrow on the navigation bar to proceed to Scenes \#1 $\sim$ \#3  of the narrative visualization. In each scene, users can browse details they are interested in with a mouse-over activity and associated tooltips will show up in the scatter plots or bar charts. Users can also choose just to continue on if they are not interested in the details of this slide. 
+
+\section{Visual Structure}
+The visual structure for the scenes is as follows:
+\begin{enumerate}
+	\item \underline{Index page}:
+		This introduction page provides the objective and context of this project. The key messages are highlighted in bold fonts or underlined, including the objective, the concept of fuel efficiency and why it is important. The viewers may resonate with such a message and decide to delve deeper into my study by browsing other scenes , especially during the recent years with gas price skyrocketing.
+	\item \underline{Scene \#1}
+	  The scatter chart is used because I want to display the linear relationship between \textit{Average Highway MPG} and \textit{Average City MPG}. The chart display bubbles with radius proportional to the number of cylinders (except for electric cars, which are with minimum radius = 5px ).  While both \textit{Average MPGs} range from 10 to 150 approximately, the number of cylinders ranges from 0 to 12. All the bubbles are evenly distributed around the red 1:1 identity line, indicating a nice linear relationship exists between \textit{Average Highway MPG} and \textit{Average City MPG}. Users can hover over each bubble, assigned to each car make, and view information such as \textit{Average Highway MPG, Average City MPG, Fuel Type, Cylinders} and  \textit{Make}.
+	  
+	\item \underline{Scene \#2}
+	 The scatter chart is selected because the number of cylinders are interval data. The chart display bubbles with radius proportional to the number of cylinders (except for electric cars, which are with minimum radius = 5px ).  The semi-log plots are chosen because of the huge difference between scales of x and y: while \textit{Average MPGs} range from 10 to 150, the number of cylinders only ranges from 0 to 12. The viewers can intuitively observe that the position of bubbles becomes lower, which corresponds to a decreasing MPG and fuel efficiency,  with an increasing number of cylinders. Users can hover over each bubble, assigned to each car make, and view information such as \textit{Average Highway MPG, Average City MPG, Fuel Type, Cylinders} and  \textit{Make}.
+	
+	\item \underline{Scene \#3}
+	As shown in previous two scenes, electric cars outperform their fossil fuel countperparts in fuel efficiency,  customers still need to consider other factors including size, easy access to gas stations and financial reasons. Nowadays most car makers manufacture 4-cylinder gasoline cars because they are cheap, spacious and there is no shortage of gas stations. To provide guidance on selecting 4-cylinder gasoline cars, two vertical bar charts are drawn which compare different brands in regards to their average city and highway MPG. The bar charts are selected because the car makes are nominal and the MPGs are continuous data. The charts display rectangle bars with lengths proportional to the MPG values. It is easy for viewers to find out the most fuel efficient 4-cylinder gasoline car makes.  In addition, users can hover over each bar, assigned to a single car brand, and view information including the MPG values and car brand.
+\end{enumerate}
+
+For Scenes \#1 $\sim$ \#3,  I use the same scene template (header, slide backward/advance, scene with annotations, description at the top of the page, summary at the bottom of the page) to promote a consistent visual structure and keep users oriented through transitions. Such scenes are either a single chart or two charts. My annotations also promote visual consistency, each following a similar template. The annotations have clean and straight edges, gray font color, text format that includes a bolded title and description that follows beneath the title.
+
+In addition, color is also critical in my visualization. I set background color of my charts to gray to attract visual interest. In both Scenes \#1 and \#2, Gasoline, Electric and Diesel cars are colored in red, green and blue respectively to ensure visual consistency.
+
+Last but not the least, all scenes in the narrative visualization contain tooltips (details on demand), annotations and brief summaries at the bottom which ensure the user can understand the data and navigate the scene. The annotations also urge the viewer to focus on the important parts of the data in each scene. The slide advance helps viewers transition to other scenes. The annotations and bottom summaries help users to understand how the data connects to the data in other scenes, as my written analyses presented explicitly in both the annotations and summaries for all three scenes reference other scenes.
+
+\section{Scenes}
+My narrative visualization includes a landing page and three scenes. My three scenes are ordered in such a way that information from the current scenes is essential in understanding the information on the next scene. 
+
+When users visited \url{https://richardxs.github.io}, they are greeted with an index page which provides the objective and context of this project. Such details are intended to provide users with no knowledge of the fuel efficiency with background information such that users have necessary understanding to navigate and process the narrative visualization. The index page also provides brief information on how to navigate the interactive slide show.
+
+\begin{enumerate}
+	\item \underline{Scene \#1}
+	The first scene is a scatter chart which plots \textit{Average Highway MPG} versus \textit{Average City MPG} for common automobile brands. I decided to put this scene first because my narrative visualization is about fuel efficiency, and before exploring its contributing factors, I felt that it was necessary to understand the concept of fuel efficiency, described by the relationship between \textit{Average Highway MPG} and \textit{Average City MPG} for common automobile brands. The x-axis of the scatter plot is \textit{Average Highway MPG}. The y-axis is \textit{Average City MPG}. When users hover over each bar, a tooltip or “details on demand” pop up and display information like the \textit{Average Highway MPG, Average City MPG, Fuel Type, Cylinders} and \textit{Make}.
+	Scene 1 also includes one annotations, highlighting that electric cars have higher MPGs. The text below the graph summarizes my observations and insights from the scatter chart, and lays the groundwork for the next scene.
+	
+	\item \underline{Scene \#2}
+	The second scene of the narrative visualization consists of two scatter charts that display average city MPGs /average highway MPGs vs. number of cylinders. The x-axis of the scatter graph contains the number of cylinders which are independent variables. The y-axis is the logarithm of average city MPGs /average highway MPGs. The semi-log plot is chosen because of the huge difference between the scales of x and y. When users hover over each bar, a tooltip or “details on demand” pop up and display information like the \textit{Average Highway MPG, Average City MPG, Fuel Type, Cylinders} and  \textit{Make}. This scene follows the previous scene to delve deeper into the impact of number of cylinders on fuel efficiency. Scene \# 2 includes two annotations, highlighting that both average city MPG and average highway MPG decrease with a rising number of cylinders. The text below the graph summarizes my observations and insights from the scatter chart, and lays the groundwork for the next scene.
+	
+	\item \underline{Scene \#3}
+	The third scene of the narrative visualization consists of two vertical bar charts which compare different brands of 4-cylinder gasoline cars in regards to  average city and highway MPG.  This scene follows the first two scenes because it builds off the insights gathered from Scenes \#1 and \#2. In Scenes \#1 and \#2, we find out that electric cars outperform their fossil fuel counterparts in fuel efficiency; however,  customers still need to consider other factors including size, easy access to gas stations and financial reasons. Nowadays most car makers manufacture 4-cylinder gasoline cars because they are cheap, spacious and there is no shortage of gas stations. For the bar charts, the x-axis is different car brands, and y-axis is average city/highway MPGs.Scene \# 2 includes two annotations, providing top choices of fuel efficient 4-cylinder gasoline cars. The text below the graph summarizes my observations and insights from the scatter chart.
+	
+\end{enumerate}
+
+\section{Annotations}
+I followed the susielu/d3-annotation (\url{https://d3-annotation.susielu.com/}) framework because they were visually consistent. My annotations follow a similar and consistent format, with clean and straight edges, gray font color, text format that includes a bolded title and description that follows beneath the title.
+The annotations do not change within a single scene.
+
+The annotation in Scene \#1 highlights that electric cars have higher MPGs. Two annotations in Scene \#2 highlight that both average city MPG and average highway MPG decrease with a rising number of cylinders. Because electric cars have zero cylinders, the message conveyed to the view appears to be favorable to electric cars. However,  customers still need to consider other factors including size, easy access to gas stations and financial reasons. Nowadays most car makers manufacture 4-cylinder gasoline cars because they are cheap, spacious and there is no shortage of gas stations. As a result, the annotations in Scene \#3 provide top choices of 4-cylinder gasoline cars based on fuel efficiency.
+
+\section{Parameters}
+The parameters are the variables that are used in the charts to control the scene and the elements in the chart, and everything else. In my visualization, each scene is with its individual state and set of parameters, based on the selection of the navigation button. In Scene \#1, my parameters are the average highway MPGs and the average city MPGs, but when I transition to Scene \#2,  an extra parameter -- number of cylinders is added. In Scene\# 3, parameters are the average highway MPGs, the average city MPG and car brands. 
+
+\section{Triggers}
+Triggers are the connections between the parameters. When one parameter changes, it can cause another parameter to change as a result and that first parameter is triggering a change in the second parameter. My visualization contains window events in my interactive slideshow, including mouseover and mouseout to display tooltips (or details on demand). 
+
+In addition, each navigation button in my slide has affordances using color to indicate that the current slide is “active” to help the viewer navigate through the project.
+
+\end{document}          

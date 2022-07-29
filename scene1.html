@@ -24,12 +24,20 @@
     <br>
     <p>
         Fuel efficiency is commonly evaluated by miles per gallon (MPG), and the following figure plots
-        average highway MPG vs. average city MPG for common automobile brands.
+        average highway MPG vs. average city MPG for common automobile brands. The size of bubble is
+        proportinal to the number of cylinders.
     </p>
     <svg id="scene1" width=1000 height=425>
-    
+        <line x1="70" y1="340" x2="1000" y2="35" stroke="red"/>
     </svg>
 
+    <p><b>Scene 1: </b>
+        Cars with a high average highway MPG usually also enjoy a high average city MPG, which makes them fit into 
+        "fuel-efficient" category. In addition, electric cars have much higher MPGs than disel and gasoline counterparts. 
+        Furthermore, the size of bubbles indicate that an automobile with a higher number of cylinders tends to have a lower
+        MPG, suggesting that it is less fuel efficient. <u>More details on the impact of number of cylinders on fuel efficiency
+        will be shown in next scene. </u>
+      </p>    
 </body>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>

@@ -15,39 +15,10 @@ async function scene1_load() {
     d3.csv("https://flunky.github.io/cars2017.csv").then(function (data) {
         const cylinders = [0,2,3,4,6,8,10,12]
     
-    // Setup dictionary for the different cylinder numbers of each car
-    var dict = {}
-    cylinders.forEach(function (item,index) {
-        cyl = {}
-        cyl["count"] = 0
-        cyl["avgHighMPG"] = 0
-        cyl["avgCityMPG"] = 0
-        dict[item] = cyl
-    });
-
-    // Populate dictionary with number of cars with that number cylinder, avg highwaympg for that cylinder, and avg city mpg for that cylinder
-    for (i=0; i < data.length; i++) {
-        
-        c = Number(data[i].EngineCylinders)
-        himpg = Number(data[i].AverageHighwayMPG)
-        cimpg = Number(data[i].AverageCityMPG)
-
-        dict[c]["count"] += 1 
-        dict[c]["avgHighMPG"] += himpg
-        dict[c]["avgCityMPG"] += cimpg
-         
-    }
-    
-    cylinders.forEach(function (item,index) {
-        dict[item]["avgHighMPG"] = (dict[item]["avgHighMPG"] / dict[item]["count"]).toFixed(2)
-        dict[item]["avgCityMPG"] = (dict[item]["avgCityMPG"] / dict[item]["count"]).toFixed(2)
-    });
-
     var scatter_x = d3.scaleLinear().domain([10,150]).range([0,900])
     var scatter_y = d3.scaleLinear().domain([10,150]).range([350,0])
     var fuel_scale = d3.scaleOrdinal().domain(["Gasoline", "Electricity", "Diesel"]).range(["red", "green", "blue"])
 
-    var dlist = Object.entries(dict);
 
     scene1.append("g")
         .attr("transform","translate(70,10)")
@@ -140,10 +111,10 @@ async function scene1_load() {
     .call(makeAnnotations1)
 
   // Legend
-  scene1.append("circle").attr("cx", 900).attr("cy", 300).attr("r", 5).style("fill", "red")
-  scene1.append("circle").attr("cx", 900).attr("cy", 320).attr("r", 5).style("fill", "green")
-  scene1.append("circle").attr("cx", 900).attr("cy", 340).attr("r", 5).style("fill", "blue")
-  scene1.append("text").attr("x", 920).attr("y", 300).text("Gasoline").style("font-size", "15px").attr("alignment-baseline", "middle")
-  scene1.append("text").attr("x", 920).attr("y", 320).text("Electricity").style("font-size", "15px").attr("alignment-baseline", "middle")
-  scene1.append("text").attr("x", 920).attr("y", 340).text("Diesel").style("font-size", "15px").attr("alignment-baseline", "middle")   
+  scene1.append("circle").attr("cx", 800).attr("cy", 300).attr("r", 5).style("fill", "red")
+  scene1.append("circle").attr("cx", 800).attr("cy", 320).attr("r", 5).style("fill", "green")
+  scene1.append("circle").attr("cx", 800).attr("cy", 340).attr("r", 5).style("fill", "blue")
+  scene1.append("text").attr("x", 820).attr("y", 300).text("Gasoline").style("font-size", "15px").attr("alignment-baseline", "middle")
+  scene1.append("text").attr("x", 820).attr("y", 320).text("Electric").style("font-size", "15px").attr("alignment-baseline", "middle")
+  scene1.append("text").attr("x", 820).attr("y", 340).text("Diesel").style("font-size", "15px").attr("alignment-baseline", "middle")   
 }
