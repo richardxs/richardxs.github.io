@@ -86,11 +86,11 @@ The annotations do not change within a single scene.
 The annotation in Scene \#1 highlights that electric cars have higher MPGs. Two annotations in Scene \#2 highlight that both average city MPG and average highway MPG decrease with a rising number of cylinders. Because electric cars have zero cylinders, the message conveyed to the view appears to be favorable to electric cars. However,  customers still need to consider other factors including size, easy access to gas stations and financial reasons. Nowadays most car makers manufacture 4-cylinder gasoline cars because they are cheap, spacious and there is no shortage of gas stations. As a result, the annotations in Scene \#3 provide top choices of 4-cylinder gasoline cars based on fuel efficiency.
 
 \section{Parameters}
-The parameters are the variables that are used in the charts to control the scene and the elements in the chart, and everything else. In my visualization, each scene is with its individual state and set of parameters, based on the selection of the navigation button. In Scene \#1, my parameters are the average highway MPGs and the average city MPGs, but when I transition to Scene \#2,  an extra parameter -- number of cylinders is added. In Scene\# 3, parameters are the average highway MPGs, the average city MPG and car brands. 
+The parameters are the variables that are used in the charts to control the scene and the elements in the chart, and everything else. In my visualization, each scene is with its individual state and set of parameters, based on the scene number on the navigation button (it is also a parameter). In Scene \#1, the parameters are the average highway MPGs and the average city MPGs, but when I transition to Scene \#2,  an extra parameter -- number of cylinders is added. In Scene\# 3, parameters are the average highway MPGs, the average city MPG and car brands.
 
 \section{Triggers}
 Triggers are the connections between the parameters. When one parameter changes, it can cause another parameter to change as a result and that first parameter is triggering a change in the second parameter. My visualization contains window events in my interactive slideshow, including mouseover and mouseout to display tooltips (or details on demand). 
 
-In addition, each navigation button in my slide has affordances using color to indicate that the current slide is “active” to help the viewer navigate through the project.
+In addition, each navigation button in my slide is a trigger and has affordances using color to indicate that the current slide is “active”, cause parameters to change and help the viewer navigate through the project.
 
 \end{document}          
