@@ -99,8 +99,8 @@ async function scene1_load() {
        },
        color: "#606060",
        x: 500,
-       y: 100,
-       dy: -30,
+       y: 150,
+       dy: 30,
        dx: 0,
        subject: { radius: 50 },
       }]     
